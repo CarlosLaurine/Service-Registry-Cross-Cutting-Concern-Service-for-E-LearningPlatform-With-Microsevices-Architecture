@@ -1,0 +1,16 @@
+server:
+  port: 8761
+
+ead:
+  service-registry:
+    username: serviceregistryclient
+    password: 'secretead123sr'
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: 'http://${ead.service-registry.username}:${ead.service-registry.password}@localhost:8761/eureka'
+
+
